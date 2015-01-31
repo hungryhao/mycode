@@ -23,15 +23,15 @@ public class MergeSortedArray {
 
 	// test
 	public void merge2(int A[], int m, int B[], int n) {
-		TreeSet tree = new TreeSet();
+		TreeSet<Integer> tree = new TreeSet<Integer>();
 		for (int i = 0; i < m; i++) {
-			tree.add(new Integer(A[i]));
+			tree.add(A[i]);
 		}
 		for (int j = 0; j < n; j++) {
-			tree.add(new Integer(B[j]));
+			tree.add(B[j]);
 		}
-		Iterator it = tree.iterator();
-		List list = new ArrayList();
+		Iterator<Integer> it = tree.iterator();
+		List<String> list = new ArrayList<String>();
 		while (it.hasNext()) {
 			list.add(it.next().toString());
 		}
