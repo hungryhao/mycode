@@ -4,7 +4,7 @@ import java.util.HashMap;
 
 public class LRUCache {
 
-	private HashMap<Integer, Node> map = new HashMap<Integer, Node>();
+	private HashMap<Integer, Node> map;
 	private int capacity;
 	private int count;
 	private Node head;
@@ -54,6 +54,7 @@ public class LRUCache {
 
 		head.post = tail;
 		tail.pre = head;
+		map = new HashMap<Integer, Node>();
 	}
 
 	public int get(int key) {
