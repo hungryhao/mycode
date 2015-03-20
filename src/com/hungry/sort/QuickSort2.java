@@ -1,6 +1,8 @@
 package com.hungry.sort;
 
 public class QuickSort2 {
+	
+	private final static int CUTOFF = 10;
 
 	private static <AnyType extends Comparable<? super AnyType>> void swapReferences(
 			AnyType[] a, int i, int n) {
@@ -25,10 +27,11 @@ public class QuickSort2 {
 		swapReferences(a, center, right - 1);
 		return a[right - 1];
 	}
-
+	
+	//最左最右和中间的值的中间值作为pivot，cutoff表示在此之下用插入排序更快
 	private static <AnyType extends Comparable<? super AnyType>> void quickSort(
 			AnyType[] a, int left, int right) {
-		if (left + 10 <= right) {
+		if (left + CUTOFF <= right) {
 			AnyType pivot = median3(a, left, right);
 
 			int i = left;
