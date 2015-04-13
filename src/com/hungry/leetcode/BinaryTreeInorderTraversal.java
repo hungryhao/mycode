@@ -20,7 +20,8 @@ public class BinaryTreeInorderTraversal {
 		list.add(root.val);
 		inorder(list, root.right);
 	}
-
+	
+	//模拟递归
 	public List<Integer> inorderTraversal2(TreeNode root) {
 		List<Integer> resList = new LinkedList<Integer>();
 		Stack<TreeNode> stack = new Stack<TreeNode>();

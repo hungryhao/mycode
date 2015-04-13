@@ -51,5 +51,22 @@ public class BinaryTreePreorderTraversal {
 		}
 		return resList;
 	}
+	
+	//模拟递归
+	public List<Integer> preorderTraversal4(TreeNode root) {
+		List<Integer> resList = new LinkedList<Integer>();
+		Stack<TreeNode> stack = new Stack<TreeNode>();
+		while(root!=null || !stack.isEmpty()) {
+			while(root!=null) {
+				resList.add(root.val);
+				stack.push(root);
+				root = root.left;
+			}
+			root = stack.pop();
+			root = root.right;
+		}
+		return resList;
+		
+	}
 
 }
